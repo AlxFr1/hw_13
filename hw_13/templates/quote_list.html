@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+        {% if quote_list %}
+            <ul>
+                {% for quote in quote_list %}
+                    <li>
+                        <div class="container" style="margin: 25px">
+                            <ul>
+                                <li><a href="{{ quote.author.get_absolute_url }}">{{ quote.author }}</a></li>
+                                <li>{{ quote.text }}</li>
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no Quotes.</p>
+</body>
+</html>

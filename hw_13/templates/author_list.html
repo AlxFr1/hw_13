@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% if author_list %}
+            <ul>
+                {% for author in author_list %}
+                    <li>
+                        <div class="container">
+                            <a href="{{author.get_absolute_url}}">
+                                {{ author.name }} ({{ author.date_of_birth }})
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no Quotes.</p>
+        {% endif %}
+</body>
+</html>
